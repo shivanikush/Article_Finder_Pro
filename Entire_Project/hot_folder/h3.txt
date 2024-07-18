@@ -1,0 +1,13 @@
+A person experiences a good quality of breathing because of Sports. Sports strengthen the lungs of the body. Sports certainly escalate the lung capacity and efficiency of the body. Hence, more oxygen enters the blood which is extremely beneficial. Furthermore, there are fewer chances of developing lung diseases due to Sports.
+
+Appropriate body weight is easy to maintain because of sports. A Sports playing person probably does not suffer from obesity or underweight problems. Sports certainly help the body remain fit and slim.
+ 
+*******
+1:A person experiences a good quality of breathing because of Sports. Sports strengthen the lungs of the body. Sports certainly escalate the lung capacity and efficiency of the body. Hence, more oxygen enters the blood which is extremely beneficial. Furthermore, there are fewer chances of developing lung diseases due to Sports.
+3:Appropriate body weight is easy to maintain because of sports. A Sports playing person probably does not suffer from obesity or underweight problems. Sports certainly help the body remain fit and slim.
+ 
+*******
+1:A person experiences a good quality of breathing because of Sports. Sports strengthen the lungs of the body. Sports certainly escalate the lung capacity and efficiency of the body. Hence, more oxygen enters the blood which is extremely beneficial. Furthermore, there are fewer chances of developing lung diseases due to Sports.
+3:Appropriate body weight is easy to maintain because of sports. A Sports playing person probably does not suffer from obesity or underweight problems. Sports certainly help the body remain fit and slim.
+6:1:A person experiences a good quality of breathing because of Sports. Sports strengthen the lungs of the body. Sports certainly escalate the lung capacity and efficiency of the body. Hence, more oxygen enters the blood which is extremely beneficial. Furthermore, there are fewer chances of developing lung diseases due to Sports.
+7:3:Appropriate body weight is easy to maintain because of sports. A Sports playing person probably does not suffer from obesity or underweight problems. Sports certainly help the body remain fit and slim.
