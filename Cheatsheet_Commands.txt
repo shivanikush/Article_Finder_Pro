@@ -1,0 +1,240 @@
+## Shell script/ Bash script Cheatsheet
+Introduction 
+command -(option) (something) date (date and current time) echo “ ” (print something in terminal) say “ ”(machine will say) date -u (date and time in UTC time) killall (name of the process); killall Skype cal months and year; cal ; cal 01 2009; whoami [to see the user] pwd [present working directory] ls [list of all the files/directories] ls -a [see hidden files] ls -l [see the details of file/folders] drwxr-xr-x [first 3 characters rwx is owner of the files and permission, r-x is folder to which the permission is given, r-x others] [ls with folders] ls Desktop
+ls -la Desktop
+file name_file [to know more about a particular file]
+cd [change directory] cd .. [go back 1 directory] cd Desktop/All_Desk cd 
+open filename [open the file/folder]
+open . [open current folder]
+in Ubuntu {xdg-open filename/foldername} touch filename [create a file]
+mkdir [create folder]
+mkdir A-folder B-folder C-folder mv 1.txt A.txt [rename file 1.txt to A.txt] mv A.txt A-folder/ [move A.txt insider A-folder]
+mv A-folder/A.txt . [move to current location] Copy and Remove  cp b.txt b2.txt
+rm b2.txt
+Star sign file *.txt rm B-folder/* [remove everything inside the folder] Recursive (-r) cp -R A-folder/ A2-folder/ rm -r A2-folder/
+ls -R .  
+ 
+2. Commands useful for shell scripting redirect (>) ex: echo “hello” > he.txt append (>>) ; append in already existing file cat f1.txt f2.txt Pipe (|) ; command1 | command2; [ls A/ | less] ; [ls A/ > temp.txt] tail -4 b.txt find: find . [find evverything] ; find N/ -name a.txt ; find N/ -type f [find file inside N] ; find N/ -type d [ finds directories inside N] Grep: grep hello a.txt; [case-sensitive] ; grep -I hello a.txt [not caase-sensitive]; ls | grep t; ls | grep -v t awk: awk ‘{print $2}’ f.txt; awk ‘{print $1 $2}’ t1.txt [print column 1 and 2]; awk ‘{print $(NF-1)}’ t1.txt [print last column] awk ‘NR==2 {print $0}’ t1.txt [print 2 row in first column] awk -F “;” ‘{print $1}’ f1.txt [add separators for columns and rows] awk ‘/usa/ {print }’ t1.txt [print all usa] awk ‘/M/ {print }’ t1.txt [print all males in t1.txt] awl ‘/usa|Canada/ {print }’ t1.txt [print use or Canadian people] awk ‘$2~/t/ {print }’ t1.txt [look for t in 2 column] sudo [let’s you to act as a root user] change ownership : sudo chown new_user file1.txt change group: sudo chgrp _guest file1.txt
+	change permission:  		-u [user] ; -g guest; o others 		chmod u=wrx f1.txt 		chmod +x f1.txt 		chmod -x f1.txt [no permission to execute] 	change ownership of folders: sudo chown -R newuser D/ 	change group: chgrp -R newsier D/ 	change permission:  Assigning values to variables 
+   myvar=573 echo “$myvar” unset variable : unset myvar 
+var=hello echo $var 			or  echo ${var}  Environment variable echo $PATH echo $USER echo $HOME
+
+
+Command substitution [$]   $(command)
+d=$(ls) echo “ `date` “ 
+
+UNIX login file .profile ; .bashrc ; .bash_profile; .login to make a particular variable for permanent just add that to .profile or any of the above file mentioned 
+
+
+#Read read myval
+Read -p “type your age” age
+Read -s password [secret]
+Read -sp “type password” password 
+-----------------------------------------
+Shell Scripting Intro
+
+
+Execute
+	./filename [telling the terminal location along with the name of file]
+
+Which
+	which ls
+	which pwd
+ 	which bash
+	which python
+
+
+Whenever we are running a command it is happening like
+		/bin/ls; /bin/pwd; /bin/clear 
+
+#!path of program to use
+#!/bin/bash
+
+
+To execute shell script anywhere add the location of shell script in $PATH
+
+
+----------------------------------------------
+Shell Scripting Advanced
+
+#Arithmetic Expressions
+	echo “$(( 2+3 ))”   #5
+	echo “(( $number1++ ))”
+
+
+#If Conditions/ else
+	
+1. 	if [ 3 -eq 3 ]; then
+			echo “same”
+		fi
+2.        3 -ne 3   #3 not equals to 3
+3.        3 -gt 1    #3 greater than 1
+4.         3 -lt 1.    #3 less than 1
+5.         3 -ge 1   # 3 greater than equals to 1
+6.         3 -le 3    # 3 <= 3
+7.         If [ 3 -ne 4 ]; then echo “not equal    else echo “equal” fi
+    1.  # EXIT echo “line 1”  echo “line 2”  exit echo “line 4”
+        1.  # Logic Conditions -o # or ; -a # and ; 
+        2.  # if on strings == ; != ; 
+        3. # Empty Strings if [ -z “$str” ];then echo “this string is empty” exit fi
+        4. # IF on files   
+----------------------------------------------------
+
+If on files
+
+
+myfile=new.txt
+If [ -e $myfile ]; then
+	echo “$myfile exists”
+Fi
+
+
+
+If [ ! -e $myfile ]; then
+	echo “$myfile does not exists”
+Fi 
+
+
+If [ -d $myfile ]; then
+	echo “$myfile is a directory”
+Fi 
+
+
+If [ -r $myfile ]; then
+	echo “$myfile is readable”
+Fi   
+
+If [ -w $myfile ]; then
+	echo “$myfile is writeable”
+Fi
+
+If [ -x $myfile ]; then
+	echo “$myfile is executable”
+Fi
+
+If [ -s $myfile ]; then
+	echo “$myfile not empty”
+Fi   
+
+If [ -f $myfile ]; then
+	echo “$myfile is a regular file”
+Fi      
+-----------------------------------
+For loops
+
+ 
+for i in {1,2,3,4} do
+	echo “hello”
+done
+
+
+
+for i in {1..4} do
+	echo “hello”
+done
+
+for i in {1,”dog”,2,”hello”,-4} do
+	echo “hello”
+done
+
+
+
+
+for i in ./*
+do
+	echo “name of file is: $i “
+Done
+
+-------------------------------------
+While loop
+
+Number=1
+While [ $number -le 15 ];
+Do
+	echo “number is $number”
+	number=$(( number + 4 ))
+done
+
+
+
+## Terminate a script; Sleep
+
+For I in {1..2}
+do
+	echo “number: $I”
+	sleep 4
+Done
+
+
+
+## (New!) Cases
+
+Echo “select an option…”
+Echo “ type 1 to do A”
+Echo “ type 2 to do B”
+
+read choice
+case $choice in
+	1) 
+		echo “ You choose A”
+		;;
+	2)  		echo “You choose B”
+		;;
+	*) echo “None of the above”	
+esac
+
+
+## Exit status
+	$?
+  Echo $?	
+	every command has it’s own exit status
+---------------------------------------
+Functions
+
+
+mydate(){
+	echo “today is : ”
+	date
+	echo “have a good day”
+}
+
+
+Echo “hello”
+mydate
+
+
+hello2(){
+	echo “hello $1 “
+	echo “hello also to $2 “
+	return 42
+}
+
+
+
+
+Echo “starting here”
+hello2 “Mark” ”hellog”.  //parameters to function echo “return value is $? ”
+
+-----------------------------------------
+Variable Scope
+  
+
+myfunct(){
+	var1=“Eggs”
+	local var2=“Salad”
+	
+	echo “ my variable inside the function is: $var1”
+}
+
+Echo “start the program”
+
+
+myfunction
+
+
+Echo “Outside $var1”.  //Eggs // it will be a global variable
+Echo “inside $var2”   //nothing printed
+
+
+
+
