@@ -1,0 +1,162 @@
+on ttys000
+shivani@Shivanis-MacBook-Air ~ % ls
+Applications		LeetHub-2.0		Movies
+Desktop			LeetHub-in-Safari	Music
+Documents		LeetHub2.0		Pictures
+Downloads		Library			Public
+shivani@Shivanis-MacBook-Air ~ % cd bash_project
+cd: no such file or directory: bash_project
+shivani@Shivanis-MacBook-Air ~ % mkdir bash_project
+shivani@Shivanis-MacBook-Air ~ % cd bash_project   
+shivani@Shivanis-MacBook-Air bash_project % ls
+shivani@Shivanis-MacBook-Air bash_project % touch project1.sh
+shivani@Shivanis-MacBook-Air bash_project % vi project1.sh 
+shivani@Shivanis-MacBook-Air bash_project % ./project1.sh
+zsh: permission denied: ./project1.sh
+shivani@Shivanis-MacBook-Air bash_project % chmod +x project1.sh 
+shivani@Shivanis-MacBook-Air bash_project % ./project1.sh       
+project1.sh
+shivani@Shivanis-MacBook-Air bash_project % bash project1.sh
+project1.sh
+shivani@Shivanis-MacBook-Air bash_project % car project1.sh 
+zsh: command not found: car
+shivani@Shivanis-MacBook-Air bash_project % cat project1.sh
+#! /bin/bash
+
+
+for myfile in *; do
+	if [ -f $myfile ]; then
+		echo "$myfile"
+	else
+		echo "$myfile is NOT a file.."
+		echo " "
+	fi
+done
+shivani@Shivanis-MacBook-Air bash_project % vi project1.sh      
+shivani@Shivanis-MacBook-Air bash_project % bash project1.sh
+project1.sh
+shivani@Shivanis-MacBook-Air bash_project % ls -l
+total 8
+-rwxr-xr-x  1 shivani  staff  135 Jul 18 16:17 project1.sh
+shivani@Shivanis-MacBook-Air bash_project % cat project1.sh 
+#!/bin/bash
+
+
+for myfile in *; do
+	if [ -f $myfile ]; then
+		echo "$myfile"
+	else
+		echo "$myfile is NOT a file.."
+		echo " "
+	fi
+done
+shivani@Shivanis-MacBook-Air bash_project % vi project1.sh  
+shivani@Shivanis-MacBook-Air bash_project % bash project1.sh
+project1.sh
+shivani@Shivanis-MacBook-Air bash_project % ./project1.sh       
+project1.sh
+shivani@Shivanis-MacBook-Air bash_project % pwd 
+/Users/shivani/bash_project
+shivani@Shivanis-MacBook-Air bash_project % cd ..
+shivani@Shivanis-MacBook-Air ~ % mv bash_project project
+shivani@Shivanis-MacBook-Air ~ % ls
+Applications		LeetHub-in-Safari	Pictures
+Desktop			LeetHub2.0		Public
+Documents		Library			project
+Downloads		Movies
+LeetHub-2.0		Music
+shivani@Shivanis-MacBook-Air ~ % cd project
+shivani@Shivanis-MacBook-Air project % ls
+project1.sh
+shivani@Shivanis-MacBook-Air project % cd ..
+shivani@Shivanis-MacBook-Air ~ % ls -l
+total 0
+drwxr-xr-x   3 shivani  staff    96 Jul  6 13:17 Applications
+drwx------+  6 shivani  staff   192 Jul  3 22:42 Desktop
+drwx------+  4 shivani  staff   128 Jun 24 22:07 Documents
+drwx------+  6 shivani  staff   192 Jul  6 13:17 Downloads
+drwxr-xr-x   2 shivani  staff    64 Jun 24 21:38 LeetHub-2.0
+drwxr-xr-x   9 shivani  staff   288 Jun 24 21:41 LeetHub-in-Safari
+drwxr-xr-x  17 shivani  staff   544 Jun 24 21:36 LeetHub2.0
+drwx------@ 91 shivani  staff  2912 Jul  6 13:17 Library
+drwx------   4 shivani  staff   128 Jun 19 23:06 Movies
+drwx------+  3 shivani  staff    96 Jun 18 21:18 Music
+drwx------+  4 shivani  staff   128 Jun 18 21:20 Pictures
+drwxr-xr-x+  4 shivani  staff   128 Jun 18 21:18 Public
+drwxr-xr-x   3 shivani  staff    96 Jul 18 16:19 project
+shivani@Shivanis-MacBook-Air ~ % chmod +x project 
+shivani@Shivanis-MacBook-Air ~ % ls -l           
+total 0
+drwxr-xr-x   3 shivani  staff    96 Jul  6 13:17 Applications
+drwx------+  6 shivani  staff   192 Jul  3 22:42 Desktop
+drwx------+  4 shivani  staff   128 Jun 24 22:07 Documents
+drwx------+  6 shivani  staff   192 Jul  6 13:17 Downloads
+drwxr-xr-x   2 shivani  staff    64 Jun 24 21:38 LeetHub-2.0
+drwxr-xr-x   9 shivani  staff   288 Jun 24 21:41 LeetHub-in-Safari
+drwxr-xr-x  17 shivani  staff   544 Jun 24 21:36 LeetHub2.0
+drwx------@ 91 shivani  staff  2912 Jul  6 13:17 Library
+drwx------   4 shivani  staff   128 Jun 19 23:06 Movies
+drwx------+  3 shivani  staff    96 Jun 18 21:18 Music
+drwx------+  4 shivani  staff   128 Jun 18 21:20 Pictures
+drwxr-xr-x+  4 shivani  staff   128 Jun 18 21:18 Public
+drwxr-xr-x   3 shivani  staff    96 Jul 18 16:19 project
+shivani@Shivanis-MacBook-Air ~ % cd project 
+shivani@Shivanis-MacBook-Air project % ls
+project1.sh
+shivani@Shivanis-MacBook-Air project % ./project1.sh 
+project1.sh
+shivani@Shivanis-MacBook-Air project % open project1.sh 
+shivani@Shivanis-MacBook-Air project % ./project1.sh   
+project1.sh
+shivani@Shivanis-MacBook-Air project %  cd 
+shivani@Shivanis-MacBook-Air ~ % cd $
+cd: no such file or directory: $
+shivani@Shivanis-MacBook-Air ~ % pwd
+/Users/shivani
+shivani@Shivanis-MacBook-Air ~ % ls
+Applications		LeetHub-in-Safari	Pictures
+Desktop			LeetHub2.0		Public
+Documents		Library			project
+Downloads		Movies
+LeetHub-2.0		Music
+shivani@Shivanis-MacBook-Air ~ % cd /
+shivani@Shivanis-MacBook-Air / % ls
+Applications	Volumes		etc		sbin
+Library		bin		home		tmp
+System		cores		opt		usr
+Users		dev		private		var
+shivani@Shivanis-MacBook-Air / % cd $
+cd: no such file or directory: $
+shivani@Shivanis-MacBook-Air / % cd usr
+shivani@Shivanis-MacBook-Air /usr % ls
+X11		bin		libexec		sbin		standalone
+X11R6		lib		local		share
+shivani@Shivanis-MacBook-Air /usr % cd ..
+shivani@Shivanis-MacBook-Air / % cd User
+naa h naa pana naa khona hi h 
+this is shivani
+bla bla bla 
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                          
+
+ 
+*******
+138:bla bla bla 
